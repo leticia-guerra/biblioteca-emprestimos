@@ -42,4 +42,23 @@ public class MultaTests
         Assert.NotNull(emprestimo);
         Assert.False(livro.Disponivel);
     }
+
+
+    [Fact]
+    public void UsuarioComMultaELivroIndisponivel_PriorizaMulta()
+    {
+        var servico = new Servico();
+        var usuario = new Usuario("Ana");
+        var livro = new Livro("Dom Casmurro");
+
+        usuario.RegistrarMulta(6m);
+        livro.Disponivel = false;
+
+        var erro = Assert.Throws<InvalidOperationException>(
+            () => servico.Emprestar(livro, usuario, Dia1));
+
+        Assert.Contains("multa pendente", erro.Message);
+        Assert.False(livro.Disponivel);
+    }
+
 }

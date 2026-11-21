@@ -32,7 +32,7 @@ public class Biblioteca
 
         return emprestimo;
     }
-    public void Devolver(Emprestimo emprestimo, DateTime dataDevolucao)
+    public decimal Devolver(Emprestimo emprestimo, DateTime dataDevolucao)
     {
         ArgumentNullException.ThrowIfNull(emprestimo);
 
@@ -46,7 +46,11 @@ public class Biblioteca
 
         emprestimo.DataDevolucao = dataDevolucao;
         emprestimo.Livro.Disponivel = true;
+
+        decimal multa = CalculadoraDeMulta.Calcular(emprestimo.DataPrevista, dataDevolucao);
+        if (multa > 0)
+            emprestimo.Usuario.RegistrarMulta(multa);
+
+        return multa;
     }
 }
-
-

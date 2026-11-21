@@ -32,4 +32,21 @@ public class Biblioteca
 
         return emprestimo;
     }
+    public void Devolver(Emprestimo emprestimo, DateTime dataDevolucao)
+    {
+        ArgumentNullException.ThrowIfNull(emprestimo);
+
+        if (emprestimo.DataDevolucao is not null)
+            throw new InvalidOperationException("Este empréstimo já foi devolvido.");
+
+        if (dataDevolucao.Date < emprestimo.DataEmprestimo.Date)
+            throw new ArgumentException(
+                "A data de devolução não pode ser anterior à data do empréstimo.",
+                nameof(dataDevolucao));
+
+        emprestimo.DataDevolucao = dataDevolucao;
+        emprestimo.Livro.Disponivel = true;
+    }
 }
+
+

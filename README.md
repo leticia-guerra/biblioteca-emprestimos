@@ -107,3 +107,9 @@ Quadro Kanban no Trello: https://trello.com/b/o7cbuZji/biblioteca-sprint-12-11-a
 | Letícia | Product Owner | K00, K02, K03 |
 | Sara | Scrum Master | K01, K04 |
 | Yasmin | Líder técnica | K05, K06 |
+
+## Versão 1.0
+
+A versão 1.0 reúne as funcionalidades de empréstimo, devolução, cálculo de multas, limite de empréstimos e bloqueio de usuários com multas pendentes.
+
+A validação da versão foi realizada com `dotnet test`, com **14 testes aprovados e nenhuma falha**.

@@ -53,7 +53,7 @@ biblioteca-emprestimos/
 
 ## Como rodar os testes
 
-Pré-requisito: [.NET SDK 9](https://dotnet.microsoft.com/download) ou mais novo instalado.
+Pré-requisito: ter o [.NET SDK 9](https://dotnet.microsoft.com/download) instalado para compilar o projeto e executar os testes automatizados.
 
 ```bash
 git clone https://github.com/leticia-guerra/biblioteca-emprestimos.git

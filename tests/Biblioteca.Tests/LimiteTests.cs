@@ -9,7 +9,7 @@ public class LimiteTests
     private static readonly DateTime Dia1 = new(2026, 11, 1);
 
     [Fact]
-    public void Emprestar_TerceiroLivro_DentroDoLimite_Funciona()
+    public void T09_Emprestar_TerceiroLivro_DentroDoLimite_Funciona()
     {
         var servico = new Servico();
         var usuario = new Usuario("Ana");
@@ -24,7 +24,7 @@ public class LimiteTests
     }
 
     [Fact]
-    public void Emprestar_QuartoLivro_AcimaDoLimite_Falha()
+    public void T10_Emprestar_QuartoLivro_AcimaDoLimite_Falha()
     {
         var servico = new Servico();
         var usuario = new Usuario("Ana");

@@ -45,7 +45,7 @@ public class MultaTests
 
 
     [Fact]
-    public void UsuarioComMultaELivroIndisponivel_PriorizaMulta()
+    public void T11b_UsuarioComMultaELivroIndisponivel_PriorizaMulta()
     {
         var servico = new Servico();
         var usuario = new Usuario("Ana");

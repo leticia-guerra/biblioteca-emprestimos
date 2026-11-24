@@ -9,7 +9,7 @@ public class EmprestimoTests
     private static readonly DateTime Dia1 = new(2026, 11, 1);
 
     [Fact]
-    public void Emprestar_LivroDisponivel_CriaEmprestimoEMarcaIndisponivel()
+    public void T01_Emprestar_LivroDisponivel_CriaEmprestimoEMarcaIndisponivel()
     {
         var servico = new Servico();
         var livro = new Livro("Dom Casmurro");
@@ -23,7 +23,7 @@ public class EmprestimoTests
     }
 
     [Fact]
-    public void Emprestar_LivroJaEmprestado_LancaErroEMantemIndisponivel()
+    public void T02_Emprestar_LivroJaEmprestado_LancaErroEMantemIndisponivel()
     {
         var servico = new Servico();
         var livro = new Livro("Dom Casmurro");
@@ -37,7 +37,7 @@ public class EmprestimoTests
     }
 
     [Fact]
-    public void Emprestar_LivroNulo_LancaArgumentNullException()
+    public void T03a_Emprestar_LivroNulo_LancaArgumentNullException()
     {
         var servico = new Servico();
 
@@ -46,7 +46,7 @@ public class EmprestimoTests
     }
 
     [Fact]
-    public void Emprestar_UsuarioNulo_LancaArgumentNullException()
+    public void T03b_Emprestar_UsuarioNulo_LancaArgumentNullException()
     {
         var servico = new Servico();
 
